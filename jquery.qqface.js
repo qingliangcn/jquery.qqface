@@ -154,7 +154,7 @@
         }
     },
 
-    //控制按钮和层，控制位置
+    //根据按钮显示表情层的位置
     function(handle, div) {
 
         var win = $(window);
@@ -188,7 +188,7 @@
         });
     },
 
-    //要据x,y返回想要的数据
+    //据据arr,x,y返回一些数据
     function(arr, x, y) {
         x = Math.min(Math.floor(x / 27), 14);
         y = Math.min(Math.floor(y / 27), 5);
