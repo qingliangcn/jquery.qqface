@@ -1,7 +1,7 @@
 # jquery.qqface
 jQuery QQ 表情插件。     
 点击一个按钮，弹出一个选择QQ表情的组件，点击即可选择表情，插入到textara里面。
-<img src="file:///D:/jquery/jquery.qqface/gif/__bg.png" width="406" height="163" />
+<img src="http://f00sun.com/wp-content/uploads/2016/03/bg.png" width="406" height="163" />
 
 # 开始使用
 1. 引入jQuery
