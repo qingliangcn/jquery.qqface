@@ -14,6 +14,10 @@
     height: 200px;
     position: absolute;
 }
+a{
+    color: #333;
+    text-decoration: none;
+}
 #liveChatContent{
     width: 400px;
     height: 100px;
@@ -27,28 +31,29 @@
     background: #f3f3f3;
     text-decoration: none;
     text-align: center;
+    border-radius: 3px;
 }
 
 
 #box.a1{
-    left: 0;
+    left: 10px;
     top: 0;
 }
 
 #box.a2{
-    right: 0;
+    right: 10px;
     top: 0;
     text-align: right;
 }
 
 #box.a3{
-    left: 0;
-    bottom: 0;
+    left: 10px;
+    bottom: 10px;
 }
 
 #box.a4{
-    right: 0;
-    bottom: 0;
+    right: 10px;
+    bottom: 10px;
     text-align: right;
 }
 </style>
@@ -77,6 +82,7 @@
 <script type="text/javascript" src="jquery.qqface.js"></script>
 <script type="text/javascript">
     $.qqface({
+        imgPath : 'gif/',
         textarea : $('#liveChatContent'),
         handle : $('#face')
     });
