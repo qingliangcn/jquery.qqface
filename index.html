@@ -9,18 +9,62 @@
 <link href="jquery.qqface.css" rel="stylesheet">
 
 <style type="text/css">
-    #liveChatContent{
-        width: 400px;
-        height: 100px;
-    }
+#box{
+    width: 450px;
+    height: 200px;
+    position: absolute;
+}
+#liveChatContent{
+    width: 400px;
+    height: 100px;
+}
+#face{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    border:1px solid #999;
+    background: #f3f3f3;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+#box.a1{
+    left: 0;
+    top: 0;
+}
+
+#box.a2{
+    right: 0;
+    top: 0;
+    text-align: right;
+}
+
+#box.a3{
+    left: 0;
+    bottom: 0;
+}
+
+#box.a4{
+    right: 0;
+    bottom: 0;
+    text-align: right;
+}
 </style>
 </head>
 <body>
 
 
-<div style="width: 500px; margin: auto;">
+<div id="box" class="a1">
+    <p>
+        <a class="pos" href="javascript:;" data-index="1">位置1</a>
+        <a class="pos" href="javascript:;" data-index="2">位置2</a>
+        <a class="pos" href="javascript:;" data-index="3">位置3</a>
+        <a class="pos" href="javascript:;" data-index="4">位置4</a>
+    </p>
     <div>
-    <textarea id="liveChatContent"></textarea>
+        <textarea id="liveChatContent"></textarea>
     </div>
     <a href="javascript:;" id="face">表情</a>
 </div>
@@ -35,6 +79,13 @@
     $.qqface({
         textarea : $('#liveChatContent'),
         handle : $('#face')
+    });
+
+
+
+    $('a.pos').on('click', function(){
+        var index = $(this).data('index');
+        $('#box').attr('class', 'a' + index);
     });
 </script>
 </body>

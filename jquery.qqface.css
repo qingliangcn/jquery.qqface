@@ -3,6 +3,7 @@
     height: 163px;
     background: url(images/bg.png) no-repeat;
     cursor: pointer;
+    position: relative;
 }
 
 .jquery-qqface{
@@ -10,12 +11,16 @@
     height: 163px;
     padding: 5px;
     border:3px solid #e5e5e5;
+    background: #fff;
+    display: none;
+    position: absolute;
 }
 
 .jquery-qqface-span{
     position: absolute;
     width: 52px;
     height: 22px;
+    display: none;
     border:1px solid #ccc;
     background-color: #e4f3ff;
     font-size: 12px;

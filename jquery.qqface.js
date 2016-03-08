@@ -104,8 +104,12 @@ $.extend({
 
         var div = $(tpl);
 
+        div.find('.jquery-qqface-layer').append(span);
+
 
         $('body').append(div);
+
+
 
         var textarea = opt.textarea;
         var handle = opt.handle;
@@ -122,10 +126,9 @@ $.extend({
                 .text(pos.text)
                 .css({
                     backgroundImage: 'url(gif/' + pos.name + '.gif)',
-                    left: pos.x * 27 + 'px',
-                    top: (pos.y * 27 + 90) + 'px',
-                })
-                .appendTo(div);
+                    left: (pos.x * 27 - 13) + 'px',
+                    top: (pos.y * 27 - 55) + 'px',
+                });
 
 
 
@@ -144,6 +147,7 @@ $.extend({
 
         handle.on('click', function(e) {
             div.show();
+            position(handle, div);
             e.stopPropagation();
         });
 
@@ -151,6 +155,7 @@ $.extend({
         $(document).on('click', function() {
             div.hide();
         });
+
 
 
         function getPos(x, y) {
@@ -170,6 +175,46 @@ $.extend({
             };
         }
 
+
+        function position(handle, div) {
+
+
+            var left = handle.offset().left;
+            var top = handle.offset().top;
+            var width = handle.outerWidth();
+            var height = handle.outerHeight();
+
+
+
+            var wWidth = $(window).width();
+            var wHeight = $(window).height();
+
+
+            var dLeft;
+            if (left + div.outerWidth() < wWidth) {
+                dLeft = left;
+            } else {
+                var right = wWidth - left - width;
+                dLeft = wWidth - right - div.outerWidth();;
+            }
+
+            var dTop;
+
+
+
+            if (top + div.outerHeight() < wHeight) {
+                dTop = top + height;
+            } else {
+                console.log('out');
+                dTop = top - div.outerHeight();
+            }
+
+            div.css({
+                left: dLeft,
+                top: dTop
+            });
+
+        }
 
         function insertText(obj, str) {
             if (document.selection) {
