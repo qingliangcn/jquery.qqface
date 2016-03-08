@@ -142,14 +142,22 @@ $.extend({
         });
 
 
-        handle.on('click', function() {
+        handle.on('click', function(e) {
             div.show();
+            e.stopPropagation();
+        });
+
+
+        $(document).on('click', function() {
+            div.hide();
         });
 
 
         function getPos(x, y) {
-            x = Math.floor(x / 27);
-            y = Math.floor(y / 27);
+            x = Math.min(Math.floor(x / 27), 14);
+            y = Math.min(Math.floor(y / 27), 5);
+
+
 
             var index = y * 15 + x;
             return {
@@ -178,14 +186,6 @@ $.extend({
             } else {
                 obj.value += str;
             }
-        }
-
-
-
-        function renderLayer() {
-            // for (var i = 0, len = arr.length; i < len; i++) {
-
-            // }
         }
 
     }
