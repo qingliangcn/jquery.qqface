@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="jquery.qqface.css" rel="stylesheet">
+
+<style type="text/css">
+    #liveChatContent{
+        width: 400px;
+        height: 100px;
+    }
+</style>
+</head>
+<body>
+
+
+<div style="width: 500px; margin: auto;">
+    <div>
+    <textarea id="liveChatContent"></textarea>
+    </div>
+    <a href="javascript:;" id="face">表情</a>
+</div>
+
+
+
+
+
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.qqface.js"></script>
+<script type="text/javascript">
+    $.qqface({
+        textarea : $('#liveChatContent'),
+        handle : $('#face')
+    });
+</script>
+</body>
+</html>
