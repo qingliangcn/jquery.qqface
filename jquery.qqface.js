@@ -1,23 +1,30 @@
-(function(arr, insertText, position, getData) {
+(function(arr, insertText, position, getData, c1, c2, c3) {
 
     $.extend({
         qqface: function(opt) {
-            var div = $('<div class="jquery-qqface"><div class="jquery-qqface-layer"></div></div>');
-            var span = $('<div class="jquery-qqface-span"></div>');
-            var pos = {};
 
-            div.find('.jquery-qqface-layer').append(span);
-            $('body').append(div);
+            var div = $('<div class="jquery-qqface">').css(c1);
+            var layer = $('<div class="jquery-qqface-layer">').css(c2).css('background', 'url(' + opt.imgPath + '/__bg.png) no-repeat');
+            var span = $('<div class="jquery-qqface-span">').css(c3);
+            var pos = {};
+            var time = new Date().valueOf();
+
+            div.append(layer.append(span)).appendTo('body');
 
             //表情层事件
             div
                 .on('mousemove', '.jquery-qqface-layer', function(e) {
-                    pos = getData(arr, e.offsetX, e.offsetY);
-                    span.show().text(pos.text).css({
-                        backgroundImage: 'url(' + opt.imgPath + pos.name + '.gif)',
-                        left: pos.x * 27 - 13,
-                        top: pos.y * 27 - 55,
-                    });
+
+                    var currTime = new Date().valueOf();
+                    if (currTime - time > 50) {
+                        time = currTime;
+                        pos = getData(arr, e.offsetX, e.offsetY);
+                        span.show().text(pos.text).css({
+                            backgroundImage: 'url(' + opt.imgPath + pos.name + '.gif)',
+                            left: pos.x * 27 - 13,
+                            top: pos.y * 27 - 55,
+                        });
+                    } 
                 })
                 .on('mouseout', '.jquery-qqface-layer', function() {
                     span.hide();
@@ -205,5 +212,40 @@
             code: '[face:' + arr[index][0] + ']',
             text: arr[index][1]
         };
+    },
+
+    //最外层css
+    {
+        width : 406,
+        height : 163,
+        padding : '5px',
+        border : '3px solid #e5e5e5',
+        background : '#fff',
+        display: 'none',
+        position : 'absolute'
+    },
+
+    //中间层css
+    {
+        width: '406px',
+        height: '163px',
+        cursor: 'pointer',
+        position: 'relative'
+    },
+
+    //小图标展示层
+    {
+        position: 'absolute',
+        width: '52px',
+        height: '22px',
+        display: 'none',
+        border: '1px solid #ccc',
+        backgroundColor: '#e4f3ff',
+        fontSize: '12px',
+        textAlign: 'center',
+        padding: '30px 0 0 0',
+        color: '#000',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center 5px'
     }
 ));

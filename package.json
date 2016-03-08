@@ -16,8 +16,6 @@
     "dependencies": {
         "gulp": "^3.9.0",
         "gulp-jshint": "^2.0.0",
-        "gulp-rename": "1.2.2",
-        "gulp-cssmin": "0.1.7",
         "gulp-uglify": "^1.5.1"
     },
     "private": true
