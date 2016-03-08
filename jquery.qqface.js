@@ -1,4 +1,4 @@
-!(function(arr, insertText, position, getData) {
+(function(arr, insertText, position, getData) {
 
     $.extend({
         qqface: function(opt) {
@@ -138,6 +138,8 @@
 
     //向text插入内容
     function(obj, str) {
+
+        obj.focus();
         if (document.selection) {
             var sel = document.selection.createRange();
             sel.text = str;
@@ -173,7 +175,7 @@
             dLeft = left;
         } else {
             var right = wWidth - left - width;
-            dLeft = wWidth - right - div.outerWidth();;
+            dLeft = wWidth - right - div.outerWidth();
         }
 
         if (top + div.outerHeight() < wHeight) {
