@@ -4,7 +4,7 @@
         qqface: function(opt) {
 
             var div = $('<div class="jquery-qqface">').css(c1);
-            var layer = $('<div class="jquery-qqface-layer">').css(c2).css('background', 'url(' + opt.imgPath + '__bg.png) no-repeat');
+            var layer = $('<div class="jquery-qqface-layer">').css(c2).css('background', 'url(' + opt.imgPath + 'bg.png) no-repeat');
             var span = $('<div class="jquery-qqface-span">').css(c3);
             var pos = {};
             var time = new Date().valueOf();
