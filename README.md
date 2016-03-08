@@ -25,3 +25,6 @@ $.qqface({
 });
 ```
 
+# License
+Copyright (c) 2016 [guosheng](http://www.f00sun.com/) Licensed under the MIT License.
+
