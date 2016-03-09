@@ -1,6 +1,7 @@
 var gulp = require("gulp");
 var uglify = require('gulp-uglify');
 var rename = require("gulp-rename");
+var webpack = require('gulp-webpack');
 
 // gulp.task('lint', function() {
 //     return gulp.src('./jquery.qqface.js')
@@ -9,8 +10,9 @@ var rename = require("gulp-rename");
 // });
 
 gulp.task('js', function() {
-    return gulp.src('jquery.qqface.js')
+    return gulp.src('./src/jquery.qqface.js')
         .pipe(uglify())
+        .pipe(webpack(require('./webpack.config.js')))
         .pipe(rename('jquery.qqface.min.js'))
         .pipe(gulp.dest('./'));
 });

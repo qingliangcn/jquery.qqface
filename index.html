@@ -54,6 +54,9 @@ a{
     bottom: 10px;
     text-align: right;
 }
+
+
+
 </style>
 </head>
 <body>
@@ -75,6 +78,12 @@ a{
 <script type="text/javascript" src="jquery.qqface.min.js"></script>
 <script type="text/javascript">
     $.qqface({
+        before : function(textarea, code){
+            console.log(textarea, code);
+        }, //要在插入之前执行
+        after: function(textarea, code){
+            console.log(textarea, code);
+        }, //在插入之后执行
         imgPath : 'gif/',
         textarea : $('#liveChatContent'),
         handle : $('#face')
