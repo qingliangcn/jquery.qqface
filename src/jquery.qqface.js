@@ -9,6 +9,13 @@
     $.extend({
         qqface: function(opt) {
 
+            var defaults = {
+                before: function() {},
+                after: function() {}
+            };
+
+            opt = $.extend({}, defaults, opt);
+
             var div = $('<div class="jquery-qqface">');
             var layer = $('<div class="jquery-qqface-layer">');
 
