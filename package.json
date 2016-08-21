@@ -1,18 +1,19 @@
 {
     "name": "jquery.qqface",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "The jQuery Plugin of qqface",
     "scripts": {},
     "repository": {
         "type": "git",
-        "url": "https://github.com/kyo4311/jquery.qqface.git"
+        "url": "https://github.com/qingliangcn/jquery.qqface.git"
     },
-    "author": "guosheng",
+    "author": "qingliangcn",
     "license": "MIT",
+    "main": "./src/jquery.qqface.js",
     "bugs": {
-        "url": "https://github.com/kyo4311/jquery.qqface/issues"
+        "url": "https://github.com/qingliangcn/jquery.qqface/issues"
     },
-    "homepage": "https://github.com/kyo4311/jquery.qqface",
+    "homepage": "https://github.com/qingliangcn/jquery.qqface",
     "dependencies": {
         "glob": "^6.0.4",
         "gulp": "^3.9.0",
